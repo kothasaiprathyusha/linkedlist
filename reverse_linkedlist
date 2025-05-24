@@ -1,0 +1,32 @@
+class Node:
+    def __init__(self,data):
+        self.val=data
+        self.next=None
+def linkedlist(arr):
+    head=None
+    for data in arr:
+        if head==None:
+            head=Node(data)
+            temp=head
+        else:
+            temp.next=Node(data)
+            temp=temp.next 
+    printlinkedlist(head)          
+def printlinkedlist(head):
+    dummy=None
+    while head!=None:
+        next=head.next
+        head.next=dummy
+        dummy=head
+        head=next
+    printdummy(dummy) 
+def printdummy(dummy):
+    while (dummy):
+        print(dummy.val)
+        dummy=dummy.next     
+arr=list(map(int,input().split()))
+linkedlist(arr)
+
+            
+
+
