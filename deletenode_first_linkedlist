@@ -1,0 +1,26 @@
+class Node:
+    def __init__(self,data):
+        self.val=data
+        self.next=None
+def createlinkeslist(arr):
+    head=None
+    temp=head
+    for data in arr:
+        if head==None:
+            head=Node(data)
+            temp=head
+        else:
+            temp.next=Node(data)
+            temp=temp.next
+    deletefirst(head)
+def deletefirst(head):
+    head=head.next
+    printele(head)
+def printele(head):
+    temp=head
+    while (temp):
+        print(temp.val)
+        temp=temp.next
+
+arr=list(map(int,input().split()))
+createlinkeslist(arr) 
